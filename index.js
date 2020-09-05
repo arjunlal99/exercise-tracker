@@ -3,8 +3,9 @@ var app = express()
 app.set('view engine', 'pug')
 require('dotenv').config()
 var mongoose = require('mongoose')
-mongoose.createConnection(process.env.DB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
-connect.once('open', () => {
+
+var conn = mongoose.createConnection(process.env.DB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+conn.once('open', () => {
     console.log("MongoDB connection successful")
 })
 
