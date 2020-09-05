@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 app.set('view engine', 'pug')
+const cors = require('cors')
 require('dotenv').config()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
